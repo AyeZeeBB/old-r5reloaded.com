@@ -18,7 +18,7 @@
     color: #fff;
     background-color: #17181f;
     overflow-x: hidden;
-    user-: none;
+    /* user-select: none; */
 }
 
 .spicutes {

@@ -53,7 +53,7 @@
                 </div>
             </div>
         </header>
-        <main v-scope @vue:mounted="mounted" class="flex items-center justify-center mt-10 -text">
+        <main v-scope @vue:mounted="mounted" class="flex items-center justify-center mt-10">
             <div class="relative flex flex-col min-w-0 break-words">
 
                 <div class="rounded-t mb-0 py-3 border-0">
@@ -70,21 +70,21 @@
                 </div>
 
                 <table class="w-full flex flex-row flex-no-wrap rounded-lg overflow-hidden md:shadow-lg my-5">
-                    <thead>
+                    <thead class="w-full">
                         <tr style="background-color: #242430"
                             class="flex flex-col flex-no-wrap md:table-row rounded-l-lg md:rounded-none mb-2 md:mb-0 text-xs uppercase whitespace-nowrap"
                             v-for="server in servers">
-                            <th class="py-4 px-3 h-15 text-left">Name</th>
+                            <th class="py-4 px-3 h-16 text-left md:h-10">Name</th>
                             <th class="py-4 px-3 h-15 text-left md:text-center">Map</th>
                             <!-- <th class="py-4 px-3 h-15 text-left md:text-center">Gamemode</th> -->
                             <!-- <th class="py-4 px-3 h-15 text-left md:text-center">IP</th> -->
                             <th class="py-4 px-3 h-15 text-left md:text-center">Players</th>
                         </tr>
                     </thead>
-                    <tbody class="flex-1 md:flex-none">
+                    <tbody class="w-full flex-1 md:flex-none">
                         <tr class="flex flex-col flex-no-wrap md:table-row text-xs text-left mb-2 md:mb-0"
                             v-for="server in servers">
-                            <td class="outline-grey-light outline-1 p-4 h-15 font-bold text-ellipsis">
+                            <td class="outline-grey-light outline-1 p-4 font-bold h-16 md:h-10">
                                 {{server.name}}
                             </td>
                             <td class="outline-grey-light outline-1 p-4 h-15 text-left md:text-center">
