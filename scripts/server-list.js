@@ -33,6 +33,10 @@ PetiteVue.createApp({
      * If true, the refresh button is disabled
      */
     loadingCooldown: false,
+    /**
+     * Id of the cooldown interval
+     */
+    cooldownIntervalId: 0,
 
     // getters
 
@@ -66,14 +70,17 @@ PetiteVue.createApp({
      */
     async updateServers() {
         // prevent spamming the refresh button
-        if (this.loadingCooldown) {
+        if (this.loadingCooldown)
             return;
-        }
-        
+
         this.loadingCooldown = true;
-        setTimeout(() => {
+
+        // Set the cooldown and clear the last interval
+        clearInterval(this.cooldownIntervalId);
+        this.loadingTimeout = setTimeout(() => {
             this.loadingCooldown = false;
-        }, 3000);
+            this.cooldownIntervalId = setInterval(this.updateServers, 10000);
+        }, 1500);
         
         // update the server list
         this.servers = await this.serverList.getServerList();
@@ -86,7 +93,11 @@ PetiteVue.createApp({
      * @returns {void}
      */
     async mounted() {
+        // Update the server list
         this.servers = this.serverList.servers;
-        await this.updateServers();
-    }
+        this.servers = await this.serverList.getServerList();
+
+        // Update the server list every 10 seconds
+        this.cooldownIntervalId = setInterval(this.updateServers, 10000);
+    },
 }).mount();

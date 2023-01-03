@@ -64,7 +64,7 @@
                         <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                             <button
                                 class="text-white text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                type="button" @click="updateServers" :class="loadingCooldown ? 'bg-indigo-800 active:bg-indigo-800 focus:bg-indigo-800 cursor-not-allowed' : 'bg-indigo-500 active:bg-indigo-600'" >Refresh</button>
+                                type="button" @click="updateServers" :class="loadingCooldown ? 'bg-indigo-800 active:bg-indigo-800 focus:bg-indigo-800 cursor-not-allowed loading' : 'bg-indigo-500 active:bg-indigo-600'">Refresh</button>
                         </div>
                     </div>
                 </div>
