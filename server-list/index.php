@@ -7,12 +7,12 @@
     <meta name="twitter:site" content="r5reloaded.com" />
     <meta name="twitter:title" content="R5Reloaded" />
     <meta name="twitter:description" content="A Mod For Apex Legends." />
-    <meta name="twitter:image" content="./content/logo.png" />
+    <meta name="twitter:image" content="../public/logo.png" />
 
     <meta property='og:title' content='r5reloaded.com' />
     <meta property='og:type' content="R5Reloaded" />
     <meta property='og:description' content='A Mod For Apex Legends.' />
-    <meta property="og:image" content='./content/logo.png' />
+    <meta property="og:image" content='../public/logo.png' />
     <meta name="theme-color" content="#ca4c4c" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -23,10 +23,10 @@
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.4/tailwind.min.css' />
-    <link rel='stylesheet' href='./styles/page.css' />
-    <link rel='stylesheet' href='./styles/about-me.css' />
-    <link rel='stylesheet' href='./styles/cards.css' />
-    <link rel='stylesheet' href='./styles/server-list.css' />
+    <link rel='stylesheet' href='../styles/page.css' />
+    <link rel='stylesheet' href='../styles/about-me.css' />
+    <link rel='stylesheet' href='../styles/cards.css' />
+    <link rel='stylesheet' href='./server-list.css' />
 
     <link rel='preconnect' href='https://fonts.googleapis.com' />
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
@@ -37,7 +37,7 @@
     <link href='https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap' rel='stylesheet'>
 
 
-    <link rel="shortcut icon" href="./content/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../public/logo.png" type="image/x-icon">
     <title>R5Reloaded - Server List</title>
 </head>
 

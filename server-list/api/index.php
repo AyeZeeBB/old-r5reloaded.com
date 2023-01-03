@@ -1,8 +1,6 @@
 <?php
-    define("PROJECT_ROOT_PATH", __DIR__ . "/../");
-
     // Load the server list model
-    require_once PROJECT_ROOT_PATH . "/lib/server-list-model.php";
+    require_once "../lib/server-list-model.php";
 
     // Get the server list
     $serverListModel = new ServerListModel();

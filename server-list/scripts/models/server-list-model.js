@@ -6,7 +6,7 @@ class ServerListModel {
      * The URL to the server list
      * @type {string}
      */
-    url = "./api/server-list.php";
+    url = "./api/index.php";
 
     /**
      * Direct URL to the server list
