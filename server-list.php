@@ -41,74 +41,71 @@
     <title>R5Reloaded - Server List</title>
 </head>
 
-<body class="p-0">
-    <header class='top-padding'>
-        <div class='pfp-flex'>
-            <div class='md:w-1/2 w-screen text-margin'>
-                <text class='name'>R5 Reloaded Server List</text>
-                <p class='sub-text'>
-                    Check out the servers that are currently running on R5 Reloaded!
-                </p>
-            </div>
-        </div>
-    </header>
-    <main v-scope @vue:mounted="mounted" class="flex items-center justify-center mt-5">
-        <div>
-            <div class="mb-12 px-4 mx-auto">
-                <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded ">
-                    <div class="rounded-t mb-0 px-4 py-3 border-0">
-                        <div class="flex flex-wrap items-center">
-                            <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-                                <h3 class="font-semibold text-base text-blueGray-700">Server List</h3>
-                            </div>
-                            <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
-                                <button
-                                    class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                    type="button" @click="updateServers">Refresh</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <table class="w-full flex flex-row flex-no-wrap rounded-lg overflow-hidden sm:shadow-lg my-5">
-                        <thead>
-                            <tr style="background-color: #242430"
-                                class="flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0 text-xs uppercase whitespace-nowrap"
-                                v-for="server in servers">
-                                <th class="p-4 text-left">Name</th>
-                                <th class="p-4 text-left">Map</th>
-                                <th class="p-4 text-left">IP</th>
-                                <th class="p-4 text-left">Port</th>
-                            </tr>
-                        </thead>
-                        <tbody class="flex-1 sm:flex-none">
-                            <tr class="flex flex-col sm:table-row mb-2 sm:mb-0 text-xs text-left" v-for="server in servers">
-                                <td
-                                    class="outline-grey-light outline-1 p-4 font-bold max-w-1">
-                                    {{server.name}}
-                                </td>
-                                <td
-                                    class="outline-grey-light outline-1 p-4 max-w-3">
-                                    {{server.map}}
-                                </td>
-                                <td
-                                    class="outline-grey-light outline-1 p-4 max-w-3">
-                                    {{server.ip}}
-                                </td>
-                                <td
-                                    class="outline-grey-light outline-1 p-4 max-w-3">
-                                    {{server.port}}
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+<body>
+    <article class="px-2 md:px-4 mx-auto">
+        <header class='top-padding'>
+            <div class='pfp-flex'>
+                <div class='md:w-1/2 text-margin'>
+                    <text class='name'>R5 Reloaded Server List</text>
+                    <p class='sub-text'>
+                        Check out the servers that are currently running on R5 Reloaded!
+                    </p>
                 </div>
             </div>
-        </div>
-    </main>
-    
+        </header>
+        <main v-scope @vue:mounted="mounted" class="flex items-center justify-center mt-5">
+            <div class="relative flex flex-col min-w-0 break-words">
+
+                <div class="rounded-t mb-0 py-3 border-0">
+                    <div class="flex flex-wrap items-center justify-center">
+                        <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+                            <h3 class="font-semibold text-base text-blueGray-700">Server List</h3>
+                        </div>
+                        <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
+                            <button
+                                class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                type="button" @click="updateServers">Refresh</button>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="w-full flex flex-row flex-no-wrap rounded-lg overflow-hidden md:shadow-lg my-5">
+                    <thead>
+                        <tr style="background-color: #242430"
+                            class="flex flex-col flex-no-wrap md:table-row rounded-l-lg md:rounded-none mb-2 md:mb-0 text-xs uppercase whitespace-nowrap"
+                            v-for="server in servers">
+                            <th class="py-4 px-3 h-15 text-left">Name</th>
+                            <th class="py-4 px-3 h-15 text-left">Map</th>
+                            <th class="py-4 px-3 h-15 text-left">IP</th>
+                            <th class="py-4 px-3 h-15 text-left">Players</th>
+                        </tr>
+                    </thead>
+                    <tbody class="flex-1 md:flex-none">
+                        <tr class="flex flex-col flex-no-wrap md:table-row text-xs text-left mb-2 md:mb-0"
+                            v-for="server in servers">
+                            <td class="outline-grey-light outline-1 p-4 h-15 font-bold text-ellipsis">
+                                {{server.name}}
+                            </td>
+                            <td class="outline-grey-light outline-1 p-4 h-15 text-left md:text-center">
+                                {{server.map}}
+                                <!-- [{{server.playlist}}] -->
+                            </td>
+                            <td class="outline-grey-light outline-1 p-4 h-15 text-left md:text-center">
+                                {{server.ip}}:{{server.port}}
+                            </td>
+                            <td class="outline-grey-light outline-1 p-4 h-15 text-left md:text-center" :class="{'text-green-500': server.playerCount > 0}">
+                                {{server.playerCount}}/{{server.maxPlayers}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </article>
+
     <!-- https://github.com/vuejs/petite-vue -->
     <script src="https://unpkg.com/petite-vue"></script>
-    <script src="./scripts/server-list-model.js"></script>
+    <script src="./scripts/models/server-list-model.js"></script>
     <script src="./scripts/server-list.js"></script>
 </body>
 

@@ -4,6 +4,11 @@
     ©️ Luna 2021
 */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 /* General */
 .page {
@@ -33,7 +38,7 @@
 }
 
 
-/* PFP-Responisve */
+/* PFP-Responsive */
 .pfp-flex {
     display: flex;
 }

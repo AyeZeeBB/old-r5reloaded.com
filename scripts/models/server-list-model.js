@@ -83,6 +83,8 @@ class ServerListModel {
             return [];
         }
 
+        console.log(data);
+
         return this.servers = data.servers;
     }
 
