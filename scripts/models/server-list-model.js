@@ -10,6 +10,7 @@ class ServerListModel {
 
     /**
      * Direct URL to the server list
+     * TODO: Remove this and use only the API
      * @type {string}
      */
     directUrl = "https://ms.r5reloaded.com/servers";
@@ -48,6 +49,11 @@ class ServerListModel {
         return this.servers;
     }
 
+    /**
+     * Convert the map name to a readable name
+     * @param {string} map 
+     * @returns {string}
+     */
     mapToName(map) {
         let names = {
             mp_rr_canyonlands_64k_x_64k: 'OG KC',
@@ -73,10 +79,17 @@ class ServerListModel {
         return map;
     }
 
+    /**
+     * Get region from IP
+     * TODO: Move this to backend and cache the result
+     * @param {string} ip
+     * @returns {Promise<string>}
+     */
     async ipToRegion(ip) {
-        // https://ipapi.co/json/
-        // https://ipapi.co/
-
+        /**
+         * Get the region from the IP
+         * @see https://ipapi.co/json/
+         */
         const response = await fetch('https://ipapi.co/json/', {
             method: 'GET',
             headers: {
@@ -121,6 +134,7 @@ class ServerListModel {
             return this.updateServerList(this.directUrl);
         }
 
+        // if the server list is still empty, return an empty array
         if (this.triedAgain) {
             this.triedAgain = false;
             return [];

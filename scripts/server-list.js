@@ -7,8 +7,18 @@ let serverList = new ServerListModel();
  */
 PetiteVue.createApp({
     // exposed to all expressions
+
+    /**
+     * The server list model
+     */
     serverList,
+    /**
+     * The server list values
+     */
     servers: [],
+    /**
+     * The server list template
+     */
     serverTemplate: {
         name: 'Name',
         map: 'Map',
@@ -17,6 +27,12 @@ PetiteVue.createApp({
     },
 
     // getters
+
+    /**
+     * Get the servers with only the properties that are in the template
+     * TODO: This is not working
+     * @returns {Array}
+     */
     get serversFilteredProperties() {
         console.log("🚀 ~ file: server-list.js:22 ~ getserversFilteredProperties ~ servers", this.servers);
 
@@ -35,14 +51,23 @@ PetiteVue.createApp({
     },
 
     // methods
+
+    /**
+     * Update the server list
+     * @returns {Promise<void>}
+     */
     async updateServers() {
         console.log('updateServers');
         this.servers = await this.serverList.getServerList();
     },
 
     // lifecycle hooks
+
+    /**
+     * Called when the app is mounted
+     * @returns {void}
+     */
     mounted() {
-        console.log('mounted');
         this.servers = this.serverList.servers;
         this.updateServers();
     }
