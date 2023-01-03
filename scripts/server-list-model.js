@@ -2,8 +2,22 @@
  * Class that handles the server list from https://ms.r5reloaded.com/servers
  */
 class ServerListModel {
+    /**
+     * The URL to the server list
+     * @type {string}
+     */
     url = "./api/server-list.php";
-    // url = "https://ms.r5reloaded.com/servers";
+
+    /**
+     * Direct URL to the server list
+     * @type {string}
+     */
+    directUrl = "https://ms.r5reloaded.com/servers";
+
+    /**
+     * True if the server list was already tried to be fetched
+     */
+    triedAgain = false;
 
     constructor() { 
         this._servers = [];
@@ -11,17 +25,17 @@ class ServerListModel {
     }
 
     /**
-     * Get the server list
+     * Setter for the server list
      * @returns {Array}
-     * @private
-     * @readonly
-     * @memberof ServerList
-     * @type {Array}
      */
     get servers() {
         return this._servers;
     }
 
+    /**
+     * Getter for the server list
+     * @param {Array} value
+     */
     set servers(value) {
         this._servers = value;
     }
@@ -34,8 +48,13 @@ class ServerListModel {
         return this.servers;
     }
 
-    async updateServerList() {
-        const response = await fetch(this.url, {
+    /**
+     * Update the server list
+     * @returns {Array}
+     */
+    async updateServerList(url = this.url) {
+
+        const response = await fetch(url, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             // mode: 'cors', // no-cors, *cors, same-origin
             // cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -50,7 +69,19 @@ class ServerListModel {
 
         let data = await response.json();
 
-        console.log(data);
+        // if the server list is empty, try again with the direct URL
+        if (!data.hasOwnProperty('servers') && !this.triedAgain) {
+            this.triedAgain = true;
+
+            console.info("Tried again");
+            
+            return this.updateServerList(this.directUrl);
+        }
+        
+        if (this.triedAgain) {
+            this.triedAgain = false;
+            return [];
+        }
 
         return this.servers = data.servers;
     }

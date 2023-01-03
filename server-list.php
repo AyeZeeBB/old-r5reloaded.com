@@ -69,7 +69,6 @@
                         </div>
                     </div>
 
-                    <!-- Old Table -->
                     <table class="w-full flex flex-row flex-no-wrap rounded-lg overflow-hidden sm:shadow-lg my-5">
                         <thead>
                             <tr style="background-color: #242430"
@@ -106,6 +105,7 @@
             </div>
         </div>
     </main>
+    
     <!-- https://github.com/vuejs/petite-vue -->
     <script src="https://unpkg.com/petite-vue"></script>
     <script src="./scripts/server-list-model.js"></script>

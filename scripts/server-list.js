@@ -1,7 +1,7 @@
 let serverList = new ServerListModel();
 
 /**
- * Create the Vue app
+ * Create the Petite Vue app
  * @type {PetiteVue}
  * @see https://github.com/vuejs/petite-vue
  */
