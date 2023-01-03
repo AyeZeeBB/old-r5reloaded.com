@@ -70,7 +70,7 @@
                 </div>
             </a>
             <a>
-                <div class='card'>
+                <div class='card' onclick='location.href = "./server-list.php"'>
                     <div style='display: flex;'>
                         <img src='./content/logo.png' class='card-img' alt='Twitter' draggable=false>
                         <span class='card-title'>Server List</span>
@@ -79,7 +79,7 @@
                         Want to see what servers are currently operational and running?
                     </p>
                     <p class='card-url'>
-                        Not Done
+                        Check it out!
                     </p>
                 </div>
             </a>
