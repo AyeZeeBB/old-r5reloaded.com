@@ -19,7 +19,7 @@ class ServerListModel {
      */
     triedAgain = false;
 
-    constructor() { 
+    constructor() {
         this._servers = [];
         this.updateServerList();
     }
@@ -48,7 +48,7 @@ class ServerListModel {
         return this.servers;
     }
 
-    mapToName (map) {
+    mapToName(map) {
         let names = {
             mp_rr_canyonlands_64k_x_64k: 'OG KC',
             mp_rr_canyonlands_mu1: 'KC S2',
@@ -57,7 +57,7 @@ class ServerListModel {
             mp_rr_desertlands_64k_x_64k_tt: 'WE Mirage Voyage',
             mp_rr_canyonlands_mu1_night: 'S2 KC After Dark',
             mp_rr_canyonlands_staging: 'Firing Range',
-            mp_rr_aqueduct: 'Overflow Arenas',  
+            mp_rr_aqueduct: 'Overflow Arenas',
             mp_rr_aqueduct_night: 'Overflow After Dark',
             mp_rr_arena_skygarden: 'Encore Arenas',
             mp_rr_ashs_redemption: 'Ash\'s Redemption',
@@ -73,7 +73,7 @@ class ServerListModel {
         return map;
     }
 
-    async ipToRegion (ip) {
+    async ipToRegion(ip) {
         // https://ipapi.co/json/
         // https://ipapi.co/
 
@@ -117,10 +117,10 @@ class ServerListModel {
             this.triedAgain = true;
 
             console.info("Tried again");
-            
+
             return this.updateServerList(this.directUrl);
         }
-        
+
         if (this.triedAgain) {
             this.triedAgain = false;
             return [];
