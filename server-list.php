@@ -42,18 +42,18 @@
 </head>
 
 <body>
-    <article class="px-2 md:px-4 mx-auto">
+    <article v-scope @vue:mounted="mounted" class="px-2 md:px-4 mx-auto" >
         <header class='top-padding'>
             <div class='pfp-flex'>
                 <div class='md:w-1/2 text-margin'>
                     <text class='name'>R5 Reloaded Server List</text>
-                    <p class='sub-text'>
-                        Check out the servers that are currently running on R5 Reloaded!
+                    <p class='sub-text' style="display: hidden;" @vue:mounted="$el.style='';">
+                        Check all {{servers.length}} servers that are currently running on R5 Reloaded!
                     </p>
                 </div>
             </div>
         </header>
-        <main v-scope @vue:mounted="mounted" class="flex items-center justify-center mt-10">
+        <main class="flex items-center justify-center mt-10" style="display: hidden;" @vue:mounted="$el.style=''">
             <div class="relative flex flex-col min-w-0 break-words">
 
                 <div class="rounded-t mb-0 py-3 border-0">
@@ -63,8 +63,8 @@
                         </div>
                         <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                             <button
-                                class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                type="button" @click="updateServers">Refresh</button>
+                                class="text-white text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                type="button" @click="updateServers" :class="loadingCooldown ? 'bg-indigo-800 active:bg-indigo-700 focus:bg-indigo-700 cursor-not-allowed' : 'bg-indigo-400 active:bg-indigo-500'" >Refresh</button>
                         </div>
                     </div>
                 </div>

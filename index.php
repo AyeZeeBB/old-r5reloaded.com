@@ -79,7 +79,7 @@
                         Want to see what servers are currently operational and running?
                     </p>
                     <p class='card-url'>
-                        Check it out!
+                        https://r5reloaded.com/server-list.php
                     </p>
                 </div>
             </a>

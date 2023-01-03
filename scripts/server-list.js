@@ -25,12 +25,20 @@ PetiteVue.createApp({
         ip: 'IP',
         port: 'Port',
     },
+    /**
+     * True if the app was already mounted
+     */
+    alreadyMounted: false,
+    /**
+     * If true, the refresh button is disabled
+     */
+    loadingCooldown: false,
 
     // getters
 
     /**
      * Get the servers with only the properties that are in the template
-     * TODO: This is not working
+     * TODO: This is not working properly yet and is not used
      * @returns {Array}
      */
     get serversFilteredProperties() {
@@ -57,7 +65,17 @@ PetiteVue.createApp({
      * @returns {Promise<void>}
      */
     async updateServers() {
-        console.log('updateServers');
+        // prevent spamming the refresh button
+        if (this.loadingCooldown) {
+            return;
+        }
+        
+        this.loadingCooldown = true;
+        setTimeout(() => {
+            this.loadingCooldown = false;
+        }, 3000);
+        
+        // update the server list
         this.servers = await this.serverList.getServerList();
     },
 
@@ -67,8 +85,8 @@ PetiteVue.createApp({
      * Called when the app is mounted
      * @returns {void}
      */
-    mounted() {
+    async mounted() {
         this.servers = this.serverList.servers;
-        this.updateServers();
+        await this.updateServers();
     }
 }).mount();
