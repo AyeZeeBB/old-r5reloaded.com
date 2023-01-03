@@ -53,7 +53,7 @@
                 </div>
             </div>
         </header>
-        <main v-scope @vue:mounted="mounted" class="flex items-center justify-center mt-5">
+        <main v-scope @vue:mounted="mounted" class="flex items-center justify-center mt-10 -text">
             <div class="relative flex flex-col min-w-0 break-words">
 
                 <div class="rounded-t mb-0 py-3 border-0">
@@ -75,9 +75,10 @@
                             class="flex flex-col flex-no-wrap md:table-row rounded-l-lg md:rounded-none mb-2 md:mb-0 text-xs uppercase whitespace-nowrap"
                             v-for="server in servers">
                             <th class="py-4 px-3 h-15 text-left">Name</th>
-                            <th class="py-4 px-3 h-15 text-left">Map</th>
-                            <th class="py-4 px-3 h-15 text-left">IP</th>
-                            <th class="py-4 px-3 h-15 text-left">Players</th>
+                            <th class="py-4 px-3 h-15 text-left md:text-center">Map</th>
+                            <!-- <th class="py-4 px-3 h-15 text-left md:text-center">Gamemode</th> -->
+                            <!-- <th class="py-4 px-3 h-15 text-left md:text-center">IP</th> -->
+                            <th class="py-4 px-3 h-15 text-left md:text-center">Players</th>
                         </tr>
                     </thead>
                     <tbody class="flex-1 md:flex-none">
@@ -90,10 +91,14 @@
                                 {{server.map}}
                                 <!-- [{{server.playlist}}] -->
                             </td>
-                            <td class="outline-grey-light outline-1 p-4 h-15 text-left md:text-center">
+                            <!-- <td class="outline-grey-light outline-1 p-4 h-15 text-left md:text-center">
                                 {{server.ip}}:{{server.port}}
-                            </td>
-                            <td class="outline-grey-light outline-1 p-4 h-15 text-left md:text-center" :class="{'text-green-500': server.playerCount > 0}">
+                            </td> -->
+                            <!-- <td class="outline-grey-light outline-1 p-4 h-15 text-left md:text-center">
+                                {{server.playlist}}
+                            </td> -->
+                            <td class="outline-grey-light outline-1 p-4 h-15 text-left md:text-center"
+                                :class="(server.playerCount == server.maxPlayers) ? 'text-red-500' : (server.playerCount > 0) ? 'text-green-500' : ''">
                                 {{server.playerCount}}/{{server.maxPlayers}}
                             </td>
                         </tr>

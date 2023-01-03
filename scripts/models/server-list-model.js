@@ -48,6 +48,49 @@ class ServerListModel {
         return this.servers;
     }
 
+    mapToName (map) {
+        let names = {
+            mp_rr_canyonlands_64k_x_64k: 'OG KC',
+            mp_rr_canyonlands_mu1: 'KC S2',
+            mp_rr_desertlands_64k_x_64k: 'World\'s Edge',
+            mp_rr_desertlands_64k_x_64k_nx: 'WE After Dark',
+            mp_rr_desertlands_64k_x_64k_tt: 'WE Mirage Voyage',
+            mp_rr_canyonlands_mu1_night: 'S2 KC After Dark',
+            mp_rr_canyonlands_staging: 'Firing Range',
+            mp_rr_aqueduct: 'Overflow Arenas',  
+            mp_rr_aqueduct_night: 'Overflow After Dark',
+            mp_rr_arena_skygarden: 'Encore Arenas',
+            mp_rr_ashs_redemption: 'Ash\'s Redemption',
+            mp_rr_arena_composite: 'Drop-Off'
+        };
+
+        if (names.hasOwnProperty(map)) {
+            return names[map];
+        }
+
+        console.info("No conversion for ", map);
+
+        return map;
+    }
+
+    async ipToRegion (ip) {
+        // https://ipapi.co/json/
+        // https://ipapi.co/
+
+        const response = await fetch('https://ipapi.co/json/', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        let data = await response.json();
+
+        console.log(data);
+
+        return data;
+    }
+
     /**
      * Update the server list
      * @returns {Array}
@@ -84,6 +127,11 @@ class ServerListModel {
         }
 
         console.log(data);
+
+        // convert the playlist to a human readable name
+        data.servers.forEach(server => {
+            server.map = this.mapToName(server.map);
+        });
 
         return this.servers = data.servers;
     }
