@@ -64,7 +64,7 @@
                         <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                             <button
                                 class="text-white text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                type="button" @click="updateServers" :class="loadingCooldown ? 'bg-indigo-800 active:bg-indigo-700 focus:bg-indigo-700 cursor-not-allowed' : 'bg-indigo-400 active:bg-indigo-500'" >Refresh</button>
+                                type="button" @click="updateServers" :class="loadingCooldown ? 'bg-indigo-800 active:bg-indigo-800 focus:bg-indigo-800 cursor-not-allowed' : 'bg-indigo-500 active:bg-indigo-600'" >Refresh</button>
                         </div>
                     </div>
                 </div>
@@ -74,6 +74,7 @@
                         <tr style="background-color: #242430"
                             class="flex flex-col flex-no-wrap md:table-row rounded-l-lg md:rounded-none mb-2 md:mb-0 text-xs uppercase whitespace-nowrap"
                             v-for="server in servers">
+                            <th class="py-4 px-3 h-15 text-left">No.</th>
                             <th class="py-4 px-3 h-16 text-left md:h-10">Name</th>
                             <th class="py-4 px-3 h-15 text-left md:text-center">Map</th>
                             <!-- <th class="py-4 px-3 h-15 text-left md:text-center">Gamemode</th> -->
@@ -82,8 +83,11 @@
                         </tr>
                     </thead>
                     <tbody class="w-full flex-1 md:flex-none">
-                        <tr class="flex flex-col flex-no-wrap md:table-row text-xs text-left mb-2 md:mb-0"
-                            v-for="server in servers">
+                        <tr class="flex flex-col flex-no-wrap md:table-row text-xs text-left mb-2 md:mb-0" style="outline: 1px solid #242430"
+                            v-for="(server, key) in servers">
+                            <td class="outline-grey-light outline-1 p-4 h-15">
+                                {{key + 1}}.
+                            </td>
                             <td class="outline-grey-light outline-1 p-4 font-bold h-16 md:h-10">
                                 {{server.name}}
                             </td>
