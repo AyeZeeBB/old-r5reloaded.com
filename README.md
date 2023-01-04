@@ -6,7 +6,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+[![GNU License][license-shield]][license-url]
 
 
 
@@ -172,8 +172,7 @@ Project Link: [https://github.com/AyeZeeBB/r5reloaded.com](https://github.com/Ay
 [issues-shield]: https://img.shields.io/github/issues/AyeZeeBB/r5reloaded.com.svg?style=flat-square
 [issues-url]: https://github.com/AyeZeeBB/r5reloaded.com/issues
 [license-shield]: https://img.shields.io/github/license/AyeZeeBB/r5reloaded.com.svg?style=flat-square
-[license-url]: https://github.com/AyeZeeBB/r5reloaded.com/blob/master/LICENSE
-[product-screenshot]: images/screenshot.png
+[license-url]: https://github.com/AyeZeeBB/r5reloaded.com/blob/master/LICENSE.md
 
 <!-- https://simpleicons.org -->
 [PetiteVue]: https://img.shields.io/badge/Petite_Vue-35495E?logo=vuedotjs&logoColor=4FC08D&style=for-the-badge
