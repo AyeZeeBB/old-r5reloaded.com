@@ -6,7 +6,8 @@ let serverList = new ServerListModel();
  * @see https://github.com/vuejs/petite-vue
  */
 PetiteVue.createApp({
-    // exposed to all expressions
+    
+    // exposed to all expressions ======================
 
     /**
      * The server list model
@@ -38,7 +39,7 @@ PetiteVue.createApp({
      */
     cooldownIntervalId: 0,
 
-    // getters
+    // getters ======================
 
     /**
      * Get the servers with only the properties that are in the template
@@ -62,7 +63,7 @@ PetiteVue.createApp({
         return servers;
     },
 
-    // methods
+    // methods ======================
 
     /**
      * Update the server list
@@ -86,7 +87,7 @@ PetiteVue.createApp({
         this.servers = await this.serverList.getServerList();
     },
 
-    // lifecycle hooks
+    // lifecycle hooks ======================
 
     /**
      * Called when the app is mounted
