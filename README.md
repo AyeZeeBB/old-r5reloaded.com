@@ -141,9 +141,9 @@ Distributed under the GNU General Public License v3.0. See `LICENSE.md` for more
 <!-- CONTACT -->
 ## Contact
 
-@AyeZeeBB - [ ] / [AyeZee#6969](https://discord.com/users/784643541045215262)
+[@AyeZeeBB](https://github.com/AyeZeeBB) - [ ] / [AyeZee#6969](https://discord.com/users/784643541045215262)
 
-@dudematthew - mmoczydlowski4@gmail.com / [HipsterSavage#8629](https://discord.com/users/426330456753963008)
+[@dudematthew](https://github.com/dudematthew) - mmoczydlowski4@gmail.com / [HipsterSavage#8629](https://discord.com/users/426330456753963008)
 
 Project Link: [https://github.com/AyeZeeBB/r5reloaded.com](https://github.com/AyeZeeBB/r5reloaded.com)
 
