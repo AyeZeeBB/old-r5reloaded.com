@@ -39,12 +39,17 @@
         <link rel="shortcut icon" href="./public/logo.png" type="image/x-icon">
         <title>R5Reloaded</title>
     </head>
+
+    <header>
+        <img src="./public/header.png">
+        <h1>R5RELOADED</h1>
+        <h2>Apex Legends Modding SDK</h2>
+    </header>
     
     <body style='padding: 0rem;'>
         <div class='top-padding'>
             <div class='pfp-flex'>
                 <div class='md:w-1/2 w-screen text-margin'>
-                    <text class='name'>Welcome to R5Reloaded</text>
                     <p class='sub-text'>
                         <br /><br />
                         <bold class='hight-light-text-gry'>!</bold> Visit our <a class='saho' href='https://github.com/Mauler125/r5sdk'>Github</a>. <br>
