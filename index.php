@@ -90,7 +90,7 @@
                         <span class='card-title'>Trello</span>
                     </div>
                     <p class='card-desc'>
-                        Want to see what bugs need fixed, or just view overall progress?
+                        Want to see what bugs needs fixing, or just view overall progress?
                     </p>
                     <p class='card-url'>
                         https://trello.com/b/ymr4R3j9/r5reloaded
