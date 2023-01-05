@@ -17,8 +17,8 @@
     </button>
   </div>
   <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" :class="{'hidden': !headerExpanded}">
-    <div class="text-sm lg:flex-grow space-x-4">
-      <a href="<?=SERVERPATH?>" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white ml-4 lg:ml-0">
+    <div class="text-sm lg:flex-grow lg:space-x-4">
+      <a href="<?=SERVERPATH?>" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white">
         Home
       </a>
       <a href="<?=SERVERLISTPATH?>" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white">
