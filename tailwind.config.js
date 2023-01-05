@@ -4,9 +4,6 @@ module.exports = {
     '**/*.{php,js,html}',
   ],
   theme: {
-    colors: {
-      'primary': 'red',
-    },
     extend: {},
   },
   plugins: [],

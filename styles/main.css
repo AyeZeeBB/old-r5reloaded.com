@@ -8,12 +8,6 @@
     box-sizing: border-box;
 }
 
-@layer base {
-    .test {
-        @apply text-2xl;
-    }
-}
-
 /* General */
 .page {
     background-color: #17181F;
