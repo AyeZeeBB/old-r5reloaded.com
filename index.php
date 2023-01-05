@@ -41,9 +41,11 @@
     </head>
     
     <body style='padding: 0rem;'>
-        <img class='headerimg' src="./public/header.png">
-        <h1>R5RELOADED</h1>
-        <h2>Apex Legends Modding SDK</h2>
+        <div class='topheader'>
+            <img class='headerimg' src="./public/header.png">
+            <h1>R5RELOADED</h1>
+            <h2>Apex Legends Modding SDK</h2>
+        </div>
 
         <div class='top-padding'>
             <div class='pfp-flex'>
