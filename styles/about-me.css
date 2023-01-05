@@ -15,6 +15,34 @@
     position: relative;
 }
 
+.ch1 {
+    top: 25%;
+    bottom: 25%;
+    left: 25%;
+    right: 25%;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 10px #000;
+    position: absolute;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ch2 {
+    top: 50%;
+    bottom: 25%;
+    left: 25%;
+    right: 25%;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 10px #000;
+    position: absolute;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 /* Text styling */
 .top-padding {
     padding-top: 1rem;
