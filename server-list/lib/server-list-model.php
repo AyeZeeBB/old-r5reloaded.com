@@ -28,7 +28,6 @@ class ServerListModel
 
     public function __construct()
     {
-        var_dump(RCACHEPATH);
         $this->cache = new CacheModel([
             'name' => __CLASS__, // Set the cache name to the class name
             'path' => RCACHEPATH.'/',
