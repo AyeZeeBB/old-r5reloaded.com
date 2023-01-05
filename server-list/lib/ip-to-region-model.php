@@ -26,8 +26,17 @@ class IpToRegionModel {
         ]);
     }
 
+    /**
+     * Get region from ip address
+     *
+     * @param string $ip
+     * @return void
+     */
     private function getContinentFromApi ($ip) {
-        $data = file_get_contents("http://ip-api.com/json/{$ip}?fields=continentCode,continentName,continent");
+        // TODO: change it so it doesn't use file_get_contents but curl instead
+        $data = file_get_contents(
+            "http://ip-api.com/json/{$ip}?fields=continentCode,continentName,continent"
+        );
 
         // If the API returns an error, return an empty object
         return json_decode(
