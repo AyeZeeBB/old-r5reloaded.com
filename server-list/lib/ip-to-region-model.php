@@ -22,7 +22,7 @@ class IpToRegionModel {
     public function __construct() {
         $this->cache = new CacheModel([
             'name' => __CLASS__, // Set the cache name to the class name
-            'path' => RCACHEPATH,
+            'path' => RCACHEPATH.'/',
             'extension' => '.json'
         ]);
     }
