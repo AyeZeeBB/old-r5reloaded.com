@@ -40,7 +40,6 @@
         <title>R5Reloaded</title>
     </head>
     
-    
     <body style='padding: 0rem;'>
         <div class='topheader'>
             <img class='headerimg' src="./public/header.png">
