@@ -65,6 +65,8 @@ class ServerListModel
         foreach ($servers as $key => $server) {
             $servers[$key]->region = $this->ipToRegionModel->getContinent($server->ip);
             $servers[$key]->regionName = $this->ipToRegionModel->getContinent($server->ip, true);
+
+            // Remove the IP from the server list
             unset($servers[$key]->ip);
         }
         
