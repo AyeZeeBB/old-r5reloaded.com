@@ -15,7 +15,7 @@
     
     // check if the server is running on localhost
     if (in_array($_SERVER['SERVER_NAME'], $developmentUrls)) {
-        // this is localhost website url
+        // this is a local website url
         define('SERVERPATH', $urlPrefix . $_SERVER['SERVER_NAME'] . '/r5reloaded.com');
     } else {
         // this is the website url
