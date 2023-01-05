@@ -39,14 +39,12 @@
         <link rel="shortcut icon" href="./public/logo.png" type="image/x-icon">
         <title>R5Reloaded</title>
     </head>
-
-    <header>
+    
+    <body style='padding: 0rem;'>
         <img class='headerimg' src="./public/header.png">
         <h1>R5RELOADED</h1>
         <h2>Apex Legends Modding SDK</h2>
-    </header>
-    
-    <body style='padding: 0rem;'>
+
         <div class='top-padding'>
             <div class='pfp-flex'>
                 <div class='md:w-1/2 w-screen text-margin'>
