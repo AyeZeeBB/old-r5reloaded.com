@@ -116,16 +116,22 @@ class ServerListModel
 
         // If the server list is cached, return the cached value
         if (!is_null($this->getServerListFromCache())) {
-            return $this->getServerListFromCache();
-        } else
+            $cachedserverList = $this->getServerListFromCache();
+            $cachedserverList->cached = true;
+            return $cachedserverList;
+        }
         
         $this->updateServerList();
         $this->convertServerIpsToRegions();
 
+        $serverList = $this->serverList;
+
         // Cache the server list
-        $this->cacheServerList($this->serverList);
-        
-        return $this->serverList;
+        $this->cacheServerList($serverList);
+            
+        $serverList->cached = false;
+
+        return $serverList;
     }
 }
 
