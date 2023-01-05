@@ -1,6 +1,7 @@
 <?php
 
 include_once dirname(__FILE__).'/ip-to-region-model.php';
+include_once '../../lib/cache-model.php';
 
 class ServerListModel
 {
@@ -18,8 +19,20 @@ class ServerListModel
      */
     protected $serverList = null;
 
+    /**
+     * Cache model
+     * 
+     * @var object $cache
+     */
+    private $cache;
+
     public function __construct()
     {
+        $this->cache = new CacheModel([
+            'name' => __CLASS__, // Set the cache name to the class name
+            'path' => '../../.cache/',
+            'extension' => '.cache'
+        ]);
         $this->ipToRegionModel = new IpToRegionModel();
         $this->updateServerList();
     }
@@ -50,6 +63,12 @@ class ServerListModel
         $this->serverList->servers = $value;
     }
 
+    /**
+     * Get the server list
+     *
+     * @param string $servers
+     * @return void
+     */
     public function __get($servers) {
         return $this->serverList->servers;
     }
@@ -74,13 +93,37 @@ class ServerListModel
     }
 
     /**
+     * Cache the server list for 2 seconds
+     *
+     * @param [type] $serverList
+     * @return void
+     */
+    private function cacheServerList ($serverList) {
+        $this->cache->store('server-list', $serverList, 2);
+    }
+
+    private function getServerListFromCache () {
+        $this->cache->eraseExpired();
+        return $this->cache->retrieve('server-list');
+    }
+
+    /**
      * Get the server list from the master server
      * 
      * @return object $serverList
      */
     public function getServerList () {
+
+        // If the server list is cached, return the cached value
+        if (!is_null($this->getServerListFromCache())) {
+            return $this->getServerListFromCache();
+        } else
+        
         $this->updateServerList();
         $this->convertServerIpsToRegions();
+
+        // Cache the server list
+        $this->cacheServerList($this->serverList);
         
         return $this->serverList;
     }
