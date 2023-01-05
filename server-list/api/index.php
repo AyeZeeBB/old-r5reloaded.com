@@ -2,7 +2,7 @@
     include_once '../../config.php';
 
     // Load the server list model
-    require_once RLIBPATH."/server-list-model.php";
+    include_once "../lib/server-list-model.php";
 
     // Get the server list
     $serverListModel = new ServerListModel();
