@@ -9,7 +9,7 @@
     
     <body style='padding: 0rem;'>
         <div class='topheader'>
-            <img class='headerimg' src="./public/header.png">
+            <img class='headerimg' src="<?=PUBLICPATH?>/header.png">
             <h1 class='ch1'>R5RELOADED</h1>
             <h2 class='ch2'>Apex Legends Modding SDK</h2>
         </div>
@@ -42,7 +42,7 @@
                 </div>
             </a>
             <a>
-                <div class='card' onclick='location.href = "./server-list"'>
+                <div class='card' onclick='location.href = "<?=SERVERPATH?>/server-list"'>
                     <div style='display: flex;'>
                         <img src='<?=PUBLICPATH?>/logo.png' class='card-img' alt='Twitter' draggable=false>
                         <span class='card-title'>Server List</span>

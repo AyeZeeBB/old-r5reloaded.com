@@ -1,6 +1,7 @@
 <?php
 
-require_once '../../lib/cache-model.php';
+require_once '../../config.php';
+require_once RLIBPATH.'/cache-model.php';
 
 
 /**
@@ -21,8 +22,8 @@ class IpToRegionModel {
     public function __construct() {
         $this->cache = new CacheModel([
             'name' => __CLASS__, // Set the cache name to the class name
-            'path' => '../../.cache/',
-            'extension' => '.cache'
+            'path' => RCACHEPATH,
+            'extension' => '.json'
         ]);
     }
 

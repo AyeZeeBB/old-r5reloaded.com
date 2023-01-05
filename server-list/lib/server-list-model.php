@@ -1,7 +1,7 @@
 <?php
-
-include_once dirname(__FILE__).'/ip-to-region-model.php';
-include_once '../../lib/cache-model.php';
+include_once '../../config.php';
+include_once RSERVERLISTPATH.'/lib/ip-to-region-model.php';
+include_once RLIBPATH.'/cache-model.php';
 
 class ServerListModel
 {
@@ -30,8 +30,8 @@ class ServerListModel
     {
         $this->cache = new CacheModel([
             'name' => __CLASS__, // Set the cache name to the class name
-            'path' => '../../.cache/',
-            'extension' => '.cache'
+            'path' => RCACHEPATH,
+            'extension' => '.json'
         ]);
         $this->ipToRegionModel = new IpToRegionModel();
         $this->updateServerList();

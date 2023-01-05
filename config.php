@@ -39,4 +39,21 @@
     define('STYLESPATH', SERVERPATH . '/styles');
     // this is the path to the styles folder
     define('RSTYLESPATH', ROOTPATH . '/styles');
+
+    // this is url to the lib folder
+    define('LIBPATH', SERVERPATH . '/lib');
+    // this is the path to the lib folder
+    define('RLIBPATH', ROOTPATH . '/lib');
+
+    // this is url to the cache folder
+    define('CACHEPATH', SERVERPATH . '/.cache');
+    // this is the path to the cache folder
+    define('RCACHEPATH', ROOTPATH . '/.cache');
+
+    // Modules ----------------------------------------
+
+    //this is url to the server-list module
+    define('SERVERLISTPATH', SERVERPATH . '/server-list');
+    // this is the path to the server-list module
+    define('RSERVERLISTPATH', ROOTPATH . '/server-list');
 ?>

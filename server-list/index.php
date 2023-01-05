@@ -46,7 +46,7 @@
                             <th class="py-4 px-3 h-15 text-left">No.</th>
                             <th class="py-4 px-3 h-16 text-left md:h-10">Name</th>
                             <th class="py-4 px-3 h-15 text-left md:text-center">Map</th>
-                            <th class="py-4 px-3 h-15 text-left md:text-center">Region</th>
+                            <!-- <th class="py-4 px-3 h-15 text-left md:text-center">Gamemode</th> -->
                             <!-- <th class="py-4 px-3 h-15 text-left md:text-center">IP</th> -->
                             <th class="py-4 px-3 h-15 text-left md:text-center">Players</th>
                         </tr>
@@ -67,9 +67,6 @@
                             <!-- <td class="outline-grey-light outline-1 p-4 h-15 text-left md:text-center">
                                 {{server.ip}}:{{server.port}}
                             </td> -->
-                            <td class="outline-grey-light outline-1 p-4 h-15 text-left md:text-center">
-                                {{server.regionName}}
-                            </td>
                             <!-- <td class="outline-grey-light outline-1 p-4 h-15 text-left md:text-center">
                                 {{server.playlist}}
                             </td> -->
