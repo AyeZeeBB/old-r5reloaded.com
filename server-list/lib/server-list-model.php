@@ -1,6 +1,16 @@
 <?php
+
+include_once dirname(__FILE__).'/ip-to-region-model.php';
+
 class ServerListModel
 {
+    /**
+     * Ip to region model
+     *
+     * @var object $ipToRegionModel
+     */
+    private $ipToRegionModel;
+
     /**
      * The server list from the master server
      *
@@ -10,6 +20,7 @@ class ServerListModel
 
     public function __construct()
     {
+        $this->ipToRegionModel = new IpToRegionModel();
         $this->updateServerList();
     }
 
@@ -30,14 +41,47 @@ class ServerListModel
     }
 
     /**
+     * Set the server list
+     *
+     * @param string $servers
+     * @param object $value
+     */
+    public function __set($servers, $value) {
+        $this->serverList->servers = $value;
+    }
+
+    public function __get($servers) {
+        return $this->serverList->servers;
+    }
+
+    /**
+     * Convert the server IPs to regions
+     *
+     * @return void
+     */
+    private function convertServerIpsToRegions () {
+        $servers = $this->servers;
+
+        foreach ($servers as $key => $server) {
+            $servers[$key]->region = $this->ipToRegionModel->getContinent($server->ip);
+            $servers[$key]->regionName = $this->ipToRegionModel->getContinent($server->ip, true);
+            unset($servers[$key]->ip);
+        }
+        
+        $this->servers = $servers;
+    }
+
+    /**
      * Get the server list from the master server
      * 
      * @return object $serverList
      */
     public function getServerList () {
         $this->updateServerList();
+        $this->convertServerIpsToRegions();
         
         return $this->serverList;
     }
 }
+
 ?>
