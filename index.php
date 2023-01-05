@@ -41,7 +41,7 @@
     </head>
 
     <header>
-        <img src="./public/header.png">
+        <img class='headerimg' src="./public/header.png">
         <h1>R5RELOADED</h1>
         <h2>Apex Legends Modding SDK</h2>
     </header>

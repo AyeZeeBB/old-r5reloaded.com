@@ -85,7 +85,7 @@ header {
     position: relative;
   }
   
-header img {
+.headerimg {
     overflow: hidden;
     top: 0;
     left: 0;
