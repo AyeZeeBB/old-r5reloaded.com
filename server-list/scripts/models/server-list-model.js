@@ -8,18 +8,6 @@ class ServerListModel {
      */
     url = "./api/index.php";
 
-    /**
-     * Direct URL to the server list
-     * TODO: Remove this and use only the API
-     * @type {string}
-     */
-    directUrl = "https://ms.r5reloaded.com/servers";
-
-    /**
-     * True if the server list was already tried to be fetched
-     */
-    triedAgain = false;
-
     constructor() {
         this._servers = [];
         this.updateServerList();
@@ -80,31 +68,6 @@ class ServerListModel {
     }
 
     /**
-     * Get region from IP
-     * TODO: Move this to backend and cache the result
-     * @param {string} ip
-     * @returns {Promise<string>}
-     */
-    async ipToRegion(ip) {
-        /**
-         * Get the region from the IP
-         * @see https://ipapi.co/json/
-         */
-        const response = await fetch('https://ipapi.co/json/', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-
-        let data = await response.json();
-
-        console.log(data);
-
-        return data;
-    }
-
-    /**
      * Update the server list
      * @returns {Array}
      */
@@ -125,19 +88,9 @@ class ServerListModel {
 
         let data = await response.json();
 
-        // if the server list is empty, try again with the direct URL
-        if (!data.hasOwnProperty('servers') && !this.triedAgain) {
-            this.triedAgain = true;
-
-            console.info("Tried again");
-
-            return this.updateServerList(this.directUrl);
-        }
-
         // if the server list is still empty, return an empty array
-        if (this.triedAgain) {
-            this.triedAgain = false;
-            return [];
+        if (!data.hasOwnProperty('servers')) {
+            return null;
         }
 
         console.log(data);
