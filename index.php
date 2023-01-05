@@ -41,10 +41,15 @@
     </head>
     
     <body style='padding: 0rem;'>
+        <div class='topheader'>
+            <img class='headerimg' src="./public/header.png">
+            <h1 class='ch1'>R5RELOADED</h1>
+            <h2 class='ch2'>Apex Legends Modding SDK</h2>
+        </div>
+
         <div class='top-padding'>
             <div class='pfp-flex'>
                 <div class='md:w-1/2 w-screen text-margin'>
-                    <text class='name'>Welcome to R5Reloaded</text>
                     <p class='sub-text'>
                         <br /><br />
                         <bold class='hight-light-text-gry'>!</bold> Visit our <a class='saho' href='https://github.com/Mauler125/r5sdk'>Github</a>. <br>
