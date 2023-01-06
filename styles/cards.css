@@ -18,7 +18,7 @@ header span {
 }
 
 .list {
-    position: absolute;
+    position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(0, min(200%/2, max(380px, 100%/5))));
     grid-gap: 50px;
