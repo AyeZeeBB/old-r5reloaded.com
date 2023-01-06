@@ -10,7 +10,7 @@
     object-fit: cover;
     pointer-events: none;
     filter: blur(0.5vw) brightness(40%);
-    position: absolute;
+    position: relative;
     overflow: hidden;
 }
 
