@@ -6,6 +6,7 @@
     "lib": "lib"
   },
   "scripts": {
+    "install": "npm i && npm run css",
     "css": "postcss styles/ --dir dist/styles",
     "css:watch": "npm run css:clean && onchange ./styles/*.css -- npm run css",
     "css:clean": "cd dist/styles && del *.css && npm run css"
