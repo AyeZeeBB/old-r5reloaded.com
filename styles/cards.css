@@ -20,6 +20,7 @@ header span {
 .list {
     position: absolute;
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, min(200%/2, max(380px, 100%/5))));
     grid-gap: 50px;
     justify-content: center;
     top: 400px;
