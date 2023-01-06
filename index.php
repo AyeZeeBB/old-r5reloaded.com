@@ -85,5 +85,9 @@
             </a>
             <br>
         </div>
+        
+        <?php foreach ($CONFIG->getFrontendScripts() as $scriptPath): ?>
+            <script src="<?=$scriptPath?>"></script>
+        <?php endforeach ?>
     </body>
 </html>

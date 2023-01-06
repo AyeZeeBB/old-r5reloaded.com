@@ -1,7 +1,7 @@
 let serverList = new ServerListModel();
 
 /**
- * Create the Petite Vue app
+ * Create the Petite Vue server-list app
  * @type {PetiteVue}
  * @see https://github.com/vuejs/petite-vue
  */
@@ -101,4 +101,4 @@ PetiteVue.createApp({
         // Update the server list every 10 seconds
         this.cooldownIntervalId = setInterval(this.updateServers, 10000);
     },
-}).mount();
+}).mount('#server-list-app');

@@ -11,7 +11,9 @@
 </head>
 
 <body>
-    <article v-scope @vue:mounted="mounted" class="px-2 md:px-4 mx-auto" >
+    <?php include RCOMPONENTSPATH.'/header/header.php'; ?>
+
+    <article id="server-list-app" @vue:mounted="mounted" class="px-2 md:px-4 mx-auto" >
         <header class='top-padding'>
             <div class='pfp-flex'>
                 <div class='md:w-1/2 text-margin'>
@@ -85,6 +87,9 @@
     <script src="https://unpkg.com/petite-vue"></script>
     <script src="./scripts/models/server-list-model.js"></script>
     <script src="./scripts/server-list.js"></script>
+    <?php foreach ($CONFIG->getFrontendScripts() as $scriptPath): ?>
+        <script src="<?=$scriptPath?>"></script>
+    <?php endforeach ?>
 </body>
 
 </html>
