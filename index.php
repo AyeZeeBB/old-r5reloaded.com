@@ -9,7 +9,9 @@
     
     <body style='padding: 0rem;'>
         <div class='topheader'>
-            <img class='headerimg' src="<?=PUBLICPATH?>/header.png">
+            <video autoplay muted loop id="myVideo">
+                <source src="https://atlas.r5reloaded.com/assets/bg.mp4" type="video/mp4">
+            </video>
             <h1 class='ch1'>R5RELOADED</h1>
             <h2 class='ch2'>Apex Legends Modding SDK</h2>
         </div>
