@@ -1,5 +1,5 @@
 .topheader {
-    position: relative;
+    position: absolute;
 }
 
 #myVideo {
@@ -10,7 +10,7 @@
     object-fit: cover;
     pointer-events: none;
     filter: blur(0.5vw) brightness(40%);
-    position: relative;
+    position: absolute;
     overflow: hidden;
 }
 
