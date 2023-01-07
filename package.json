@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/AyeZeeBB/r5reloaded.com#readme",
   "dependencies": {
+    "del-cli": "^5.0.0",
     "onchange": "^7.1.0",
     "postcss-import": "^15.1.0"
   },
