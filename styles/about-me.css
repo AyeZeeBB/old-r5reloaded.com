@@ -40,6 +40,21 @@
     filter: drop-shadow(0px 0px 10px #000);
     -webkit-filter: drop-shadow(0px 0px 10px #000);
 }
+/*
+
+.img1 {
+    margin: 0;
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.img1 img{
+    filter: drop-shadow(0px 0px 10px #000);
+    -webkit-filter: drop-shadow(0px 0px 10px #000);
+} */
 
 .ch1 {
     top: 300px;
@@ -65,7 +80,7 @@
     text-shadow: 0 0 10px #000;
     position: absolute;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+} */
 
 /* Text styling */
 .top-padding {
