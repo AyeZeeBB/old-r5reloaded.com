@@ -1,0 +1,48 @@
+/*
+    Note: This code is under the GNU General Public License v3.0
+    Check our this link for more Informations: https://github.com/Luna-devv/Modern-Website/blob/main/LICENSE.
+    ©️ Luna 2021
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General */
+.page {
+    background-color: #17181F;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    background-color: #17181f;
+    overflow-x: hidden;
+    /* user-select: none; */
+    height: 100vh;
+}
+
+@media only screen and (max-width: 873px) {
+    .pfp-flex {
+        display: unset;
+    }
+
+    .pfp {
+        padding: 1rem;
+        width: 100%;
+    }
+}
+
+
+/* Scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #242430;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #30303f;
+}

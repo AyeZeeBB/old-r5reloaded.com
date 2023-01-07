@@ -2,17 +2,21 @@
 
 <!DOCTYPE html>
 <html class='page font-Roboto' lang='en'>
+    <div class="video-container">
+        <video autoplay muted loop id="myVideo">
+            <source src="https://atlas.r5reloaded.com/assets/bg.mp4" type="video/mp4">
+        </video>
+    </div>
 
     <head>
         <?php include RCOMPONENTSPATH.'/head.php'; ?>
     </head>
     
-    <body style='padding: 0rem;'>
-        <?php include RCOMPONENTSPATH.'/header/header.php'; ?>
+    <body>
         <div class='topheader'>
-            <video autoplay muted loop id="myVideo">
-                <source src="https://atlas.r5reloaded.com/assets/bg.mp4" type="video/mp4">
-            </video>
+            <div class="img1">
+                <img src="<?=PUBLICPATH?>/mainlogo.png" alt="apex" width="100" height="100">
+            </div>
             <h1 class='ch1'>R5RELOADED</h1>
             <h2 class='ch2'>Apex Legends Modding SDK</h2>
         
@@ -52,7 +56,7 @@
                             <span class='card-title'>Trello</span>
                         </div>
                         <p class='card-desc'>
-                            Want to see what bugs needs fixing, or just view overall progress?
+                            Want to see what bugs need fixing, or just view overall progress?
                         </p>
                         <p class='card-url'>
                             https://trello.com/b/ymr4R3j9/r5reloaded

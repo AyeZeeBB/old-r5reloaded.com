@@ -6,7 +6,7 @@
 <head>
     <?php include RCOMPONENTSPATH.'/head.php'; ?>
 
-    <link rel='stylesheet' href='<?=STYLESPATH?>/server-list.css' />
+    <link rel='stylesheet' href='./server-list.css' />
     <title>R5Reloaded - Server List</title>
 </head>
 
