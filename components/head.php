@@ -18,8 +18,7 @@
 <meta name='keywords' content='website' />
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.4/tailwind.min.css' />
-<link rel='stylesheet' href='<?=STYLESPATH?>/page.css' />
+<link rel='stylesheet' href='<?=STYLESPATH?>/main.css' />
 <link rel='stylesheet' href='<?=STYLESPATH?>/about-me.css' />
 <link rel='stylesheet' href='<?=STYLESPATH?>/cards.css' />
 
