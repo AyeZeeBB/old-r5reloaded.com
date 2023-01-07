@@ -46,20 +46,15 @@ class Config {
         // this is the path to the public folder
         define('RPUBLICPATH', ROOTPATH . '/public');
 
-        // this is url to the dist folder
-        define('DISTPATH', SERVERPATH . '/dist');
-        // this is the path to the dist folder
-        define('RDISTPATH', ROOTPATH . '/dist');
-
         // this is url to the components folder
         define('COMPONENTSPATH', SERVERPATH . '/components');
         // this is the path to the components folder
         define('RCOMPONENTSPATH', ROOTPATH . '/components');
 
         // this is url to the styles folder
-        define('STYLESPATH', DISTPATH . '/styles');
+        define('STYLESPATH', SERVERPATH . '/styles');
         // this is the path to the styles folder
-        define('RSTYLESPATH', RDISTPATH . '/styles');
+        define('RSTYLESPATH', ROOTPATH . '/styles');
 
         // this is url to the lib folder
         define('LIBPATH', SERVERPATH . '/lib');
