@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*
+    Note: This code is under the GNU General Public License v3.0
+    Check our this link for more Informations: https://github.com/Luna-devv/Modern-Website/blob/main/LICENSE.
+    ©️ Luna 2021
+*/
 
 * {
     margin: 0;
