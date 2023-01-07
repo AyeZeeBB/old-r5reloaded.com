@@ -6,9 +6,11 @@
     "lib": "lib"
   },
   "scripts": {
-    "install": "npm i && npm run css",
+    "prepare": "husky install && npm run css",
+    "build": "npm run css:clean && npm run css",
+    "watch": "npm run css:watch",
     "css": "postcss styles/ --dir dist/styles",
-    "css:watch": "npm run css:clean && onchange ./styles/*.css -- npm run css",
+    "css:watch": "postcss styles/ --dir dist/styles -w",
     "css:clean": "cd dist/styles && del *.css && npm run css"
   },
   "repository": {
@@ -27,6 +29,7 @@
   "homepage": "https://github.com/AyeZeeBB/r5reloaded.com#readme",
   "dependencies": {
     "del-cli": "^5.0.0",
+    "husky": "^8.0.3",
     "onchange": "^7.1.0",
     "postcss-import": "^15.1.0"
   },

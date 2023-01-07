@@ -4,7 +4,11 @@ module.exports = {
     '**/*.{php,js,html}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        segoeui: ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
+      }
+    },
   },
   plugins: [],
 }
