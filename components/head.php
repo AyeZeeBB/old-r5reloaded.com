@@ -1,13 +1,13 @@
-<meta name="description" content="A Mod For Apex Legends." />
+<meta name="description" content="Apex Legends SDK" />
 
 <meta name="twitter:site" content="r5reloaded.com" />
 <meta name="twitter:title" content="R5Reloaded" />
-<meta name="twitter:description" content="A Mod For Apex Legends." />
+<meta name="twitter:description" content="Apex Legends SDK" />
 <meta name="twitter:image" content="<?=PUBLICPATH?>/logo.png" />
 
 <meta property='og:title' content='r5reloaded.com' />
 <meta property='og:type' content="R5Reloaded" />
-<meta property='og:description' content='A Mod For Apex Legends.' />
+<meta property='og:description' content='Apex Legends SDK' />
 <meta property="og:image" content='<?=PUBLICPATH?>/logo.png' />
 <meta name="theme-color" content="#ca4c4c" />
 
@@ -33,3 +33,4 @@
 
 <link rel="icon" href="<?=PUBLICPATH?>/logo.png" type="image/png" />
 
+<title>R5Reloaded</title>
