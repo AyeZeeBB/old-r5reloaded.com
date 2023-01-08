@@ -18,3 +18,7 @@ else
   DIR=$(dirname package)
   cd "$DIR" && npm run build
 fi
+
+echo "📦 Done!"
+
+exit 1
