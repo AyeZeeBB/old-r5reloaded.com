@@ -28,11 +28,34 @@ class Config {
         } else {
             $urlPrefix = 'http://';
         }
-        
+
         // check if the server is running on localhost
         if (in_array($_SERVER['SERVER_NAME'], $this->developmentUrls)) {
+
+            // get the url suffix for the local hosting
+            // example: http://localhost/{suffix}/r5reloaded.com
+            $url = $_SERVER['REQUEST_URI'];
+            $urlChunks = explode('/', $url);
+
+            $urlSuffix = '';
+
+            foreach ($urlChunks as $chunk) {
+                // skip if the chunk is empty
+                if ($chunk == '') {
+                    continue;
+                }
+
+                // break if the chunk is the website name
+                if ($chunk == 'r5reloaded.com') {
+                    break;
+                }
+
+                // add the chunk to the url suffix
+                $urlSuffix .= '/' . $chunk;
+            }
+
             // this is a local website url
-            define('SERVERPATH', $urlPrefix . $_SERVER['SERVER_NAME'] . '/r5reloaded.com');
+            define('SERVERPATH', $urlPrefix . $_SERVER['SERVER_NAME'] . $urlSuffix . '/r5reloaded.com');
         } else {
             // this is the website url
             define('SERVERPATH', $urlPrefix . $_SERVER['SERVER_NAME']);
