@@ -143,7 +143,4 @@ class IpToRegionModel {
     }
 }
 
-$ipToRegionModel = new IpToRegionModel();
-
-$ipToRegionModel->getContinentFromApi('212.244.117.201');
 ?>
