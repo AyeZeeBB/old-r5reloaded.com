@@ -30,7 +30,7 @@
                 <div class="rounded-t mb-0 py-3 border-0">
                     <div class="flex flex-wrap items-center justify-center">
                         <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-                            <h3 class="font-semibold text-base text-blueGray-700">Server List</h3>
+                            <h3 class="font-semibold text-base text-blueGray-700">Currently {{playersAmount}} Players Online</h3>
                         </div>
                         <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                             <button

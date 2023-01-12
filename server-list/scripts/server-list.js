@@ -62,6 +62,18 @@ PetiteVue.createApp({
 
         return servers;
     },
+    /**
+     * Get the total amount of players
+     * 
+     * @returns {number}
+     */
+    get playersAmount () {
+        let amount = 0;
+        for (const server of this.servers) {
+            amount += parseInt(server.playerCount);
+        }
+        return amount;
+    },
 
     // methods ======================
 
