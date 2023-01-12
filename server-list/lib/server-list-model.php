@@ -93,13 +93,13 @@ class ServerListModel
     }
 
     /**
-     * Cache the server list for 2 seconds
+     * Cache the server list for X seconds
      *
      * @param [type] $serverList
      * @return void
      */
     private function cacheServerList ($serverList) {
-        $this->cache->store('server-list', $serverList, 2);
+        $this->cache->store('server-list', $serverList, 5);
     }
 
     private function getServerListFromCache () {

@@ -33,7 +33,7 @@ class IpToRegionModel {
      * @param string $ip
      * @return void
      */
-    public function getContinentFromApi ($ip) {
+    private function getContinentFromApi ($ip) {
         // If the API is blocked, return an empty object
 
         if ($this->isApiBlocked()) {
