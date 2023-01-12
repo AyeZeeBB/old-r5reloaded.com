@@ -10,9 +10,11 @@ if [[ ${PACKAGES[@]} ]]; then
     echo "📦 $package was changed. Running npm install to update your dependencies..."
     DIR=$(dirname package)
     cd "$DIR" && npm install
+    echo "📦 Running install script..." > ./log/build.log
   done
 else
   echo "📦 No package-lock.json files were changed. Skipping npm install..."
   DIR=$(dirname package)
   cd "$DIR" && npm run build
+  echo "📦 Running build script..." > ./log/build.log
 fi

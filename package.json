@@ -6,6 +6,7 @@
     "lib": "lib"
   },
   "scripts": {
+    "postinstall": "husky install",
     "prepare": "husky install && npm run css",
     "build": "npm run css:clean && npm run css",
     "watch": "npm run css:watch",
