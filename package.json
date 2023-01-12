@@ -7,7 +7,7 @@
   },
   "scripts": {
     "postinstall": "husky install",
-    "prepare": "husky install && npm run css",
+    "prepare": "husky install && npm run build",
     "build": "npm run css:clean && npm run css",
     "watch": "npm run css:watch",
     "css": "postcss styles/ --dir dist/styles",
