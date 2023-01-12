@@ -73,7 +73,7 @@ class IpToRegionModel {
 
         
         // If the API returns a 429 error, block the API for a minute
-        if ($http_status === 429) {
+        if ($http_status === 429 || $XrlPos == 0) {
             // Log the error
             error_log("IpToRegionModel: API blocked for {$Xttl} seconds", 0, RLOGPATH.'/warning.log');
 
