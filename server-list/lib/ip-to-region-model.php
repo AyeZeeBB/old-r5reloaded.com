@@ -63,8 +63,7 @@ class IpToRegionModel {
         $XttlPos = array_search('X-Ttl:', $headerChunks);
 
         // X-Rl contains the number of requests remaining in the current minute
-        // TODO: Implement a way to block the API if the number of requests remaining is 0
-        // $Xrl = $headerChunks[$XrlPos + 1] ?? 0;
+        $Xrl = $headerChunks[$XrlPos + 1] ?? 0;
         // X-Ttl contains the number of seconds until the current minute is over
         $Xttl = $headerChunks[$XttlPos + 1] ?? 0;
 
@@ -73,7 +72,7 @@ class IpToRegionModel {
 
         
         // If the API returns a 429 error, block the API for a minute
-        if ($http_status === 429 || $XrlPos == 0) {
+        if ($http_status === 429 || $Xrl == 0) {
             // Log the error
             error_log("IpToRegionModel: API blocked for {$Xttl} seconds\n", 3, RLOGPATH.'/warning.log');
 
