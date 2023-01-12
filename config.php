@@ -90,9 +90,9 @@ class Config {
         define('RCACHEPATH', ROOTPATH . '/.cache');
 
         // this is url to the logs folder
-        define('LOGPATH', SERVERPATH . '/.logs');
+        define('LOGPATH', SERVERPATH . '/log');
         // this is the path to the logs folder
-        define('RLOGPATH', ROOTPATH . '/.logs');
+        define('RLOGPATH', ROOTPATH . '/log');
 
 
         // Modules ----------------------------------------
@@ -101,6 +101,13 @@ class Config {
         define('SERVERLISTPATH', SERVERPATH . '/server-list');
         // this is the path to the server-list module
         define('RSERVERLISTPATH', ROOTPATH . '/server-list');
+
+        // Setters ----------------------------------------
+
+        // Create log folder if it doesn't exist
+        if (!file_exists(RLOGPATH)) {
+            mkdir(RLOGPATH, 0777, true);
+        }
     }
 
     /**
