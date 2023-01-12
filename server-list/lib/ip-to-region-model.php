@@ -33,16 +33,69 @@ class IpToRegionModel {
      * @param string $ip
      * @return void
      */
-    private function getContinentFromApi ($ip) {
-        // TODO: change it so it doesn't use file_get_contents but curl instead
-        $data = file_get_contents(
-            "http://ip-api.com/json/{$ip}?fields=continentCode,continentName,continent"
-        );
+    public function getContinentFromApi ($ip) {
+        // If the API is blocked, return an empty object
+
+        if ($this->isApiBlocked()) {
+            return json_decode('{}');
+        }
+
+        // Get the region from the API using curl
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "http://ip-api.com/json/{$ip}?fields=continentCode,continentName,continent");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_HEADER, 1);
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        // Get the HTTP status code
+        $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        // Get the header
+        $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+        $header = substr($response, 0, $header_size);
+
+        // Split the header into chunks
+        $headerChunks = preg_split("@[\s+　]@u", trim($header));;
+
+        // Get the position of the X-TTL and X-Rl headers
+        $XrlPos = array_search('X-Rl:', $headerChunks);
+        $XttlPos = array_search('X-Ttl:', $headerChunks);
+
+        // X-Rl contains the number of requests remaining in the current minute
+        // TODO: Implement a way to block the API if the number of requests remaining is 0
+        // $Xrl = $headerChunks[$XrlPos + 1] ?? 0;
+        // X-Ttl contains the number of seconds until the current minute is over
+        $Xttl = $headerChunks[$XttlPos + 1] ?? 0;
+
+        // Get the data from the response
+        $data = substr($response, $header_size);
+
+        
+        // If the API returns a 429 error, block the API for a minute
+        if ($http_status === 429) {
+            // Log the error
+            error_log("IpToRegionModel: API blocked for {$Xttl} seconds", 0, RLOGPATH.'/warning.log');
+
+
+            $this->cache->store('blocked', true, $Xttl);
+            return json_decode('{}');
+        }
 
         // If the API returns an error, return an empty object
         return json_decode(
             $data ? $data : '{}'
         );
+    }
+
+    /**
+     * Check if the API is blocked
+     * 
+     * @return bool
+     */
+    public function isApiBlocked () {
+        $this->cache->eraseExpired();
+        return $this->cache->retrieve('blocked') ? true : false;
     }
 
     /**
@@ -90,4 +143,7 @@ class IpToRegionModel {
     }
 }
 
+$ipToRegionModel = new IpToRegionModel();
+
+$ipToRegionModel->getContinentFromApi('212.244.117.201');
 ?>
