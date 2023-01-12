@@ -89,6 +89,12 @@ class Config {
         // this is the path to the cache folder
         define('RCACHEPATH', ROOTPATH . '/.cache');
 
+        // this is url to the logs folder
+        define('LOGPATH', SERVERPATH . '/.logs');
+        // this is the path to the logs folder
+        define('RLOGPATH', ROOTPATH . '/.logs');
+
+
         // Modules ----------------------------------------
 
         //this is url to the server-list module
