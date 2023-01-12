@@ -143,5 +143,4 @@ class IpToRegionModel {
     }
 }
 
-error_log("IpToRegionModel: API blocked for {12} seconds\n", 3, RLOGPATH.'/warning.log');
 ?>
