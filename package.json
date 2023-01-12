@@ -1,0 +1,43 @@
+{
+  "name": "r5reloaded.com",
+  "version": "1.0.0",
+  "description": "This website is focused on providing its users the most important informations to easily follow R5 Reloaded project.",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "postinstall": "husky install",
+    "prepare": "husky install && npm run build",
+    "build": "npm run css:clean && npm run css",
+    "watch": "npm run css:watch",
+    "css": "postcss styles/ --dir dist/styles",
+    "css:watch": "postcss styles/ --dir dist/styles -w",
+    "css:clean": "cd dist/styles && del *.css && npm run css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AyeZeeBB/r5reloaded.com.git"
+  },
+  "keywords": [
+    "r5",
+    "reloaded"
+  ],
+  "author": "AyeZeeBB, dudematthew",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/AyeZeeBB/r5reloaded.com/issues"
+  },
+  "homepage": "https://github.com/AyeZeeBB/r5reloaded.com#readme",
+  "dependencies": {
+    "del-cli": "^5.0.0",
+    "husky": "^8.0.3",
+    "onchange": "^7.1.0",
+    "postcss-import": "^15.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.20",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.2.4"
+  }
+}

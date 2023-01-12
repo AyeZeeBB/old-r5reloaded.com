@@ -102,7 +102,7 @@ This website is focused on providing its users the most important informations t
 - [x] Add Home Page
 - [x] Add Server List Page
     - [x] Auto-refreshing
-    - [ ] Fetching IP locations to provide R5R server regions
+    - [x] Fetching IP locations to provide R5R server regions
     - [ ] Providing ping to R5R servers
 
 See the [open issues](https://github.com//AyeZeeBB/r5reloaded.com/issues) for a full list of proposed features (and known issues).
