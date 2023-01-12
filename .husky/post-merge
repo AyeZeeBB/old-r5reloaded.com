@@ -9,7 +9,7 @@ if [[ ${PACKAGES[@]} ]]; then
   for package in $PACKAGES; do
     echo "📦 $package was changed. Running npm install to update your dependencies..."
     DIR=$(dirname package)
-    cd "$DIR" && npm install
+    cd "$DIR" && npm install && npm run build
     echo "📦 Running install script..." > ./log/build.log
   done
 else
